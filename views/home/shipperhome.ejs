@@ -1,0 +1,1043 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" itemscope="itemscope" itemtype="http://schema.org/Product" class=" js geolocation history websockets localstorage">
+
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Truper</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+       
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="favicon.ico" /> 
+        <style type="text/css">
+            body {
+              margin: 0;
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              font-size: 14px;
+              line-height: 20px;
+              color: #333333;
+              background: url(../images/bgmapp.jpg) no-repeat center center fixed; 
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+            }
+        </style>
+        <style>
+            [ng\:cloak],[ng-cloak],[data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak{
+                display: none !important;
+            }
+            /*.ui-dialog.ui-dialog-buttons{height: auto !important; width: 360px !important; left: 40.5% !important;}*/
+            .ui-dialog .ui-dialog-buttonpane{margin:0px !important;}
+        </style>
+        <style type="text/css">
+            .page-header .page-header-top .menu-toggler {
+                background: rgba(0, 0, 0, 0) url("../images/menu-toggler.png") no-repeat scroll center center;
+                display: none;
+                float: right;
+                height: 30px;
+                margin: 23px 3px 0 13px;
+                opacity: 0.7;
+                width: 40px;
+            }
+        </style>
+    </head>    
+    <!-- END HEAD -->
+
+    <body class="page-container-bg-solid" ng-app="app" ng-controller="shpc">
+        <div class="page-wrapper" ng-init="shipperHome()">
+            <div class="page-wrapper-row">
+                <div class="page-wrapper-top">
+                    <!-- BEGIN HEADER -->
+                    <div class="page-header">
+                        <!-- BEGIN HEADER TOP -->
+                        <div class="page-header-top">
+                            <div class="container">
+                                <!-- BEGIN LOGO -->
+                                <div class="page-logo">
+                                    <a href="index.html">
+                                        <img src="images/logo-default.jpg" alt="logo" class="logo-default">
+                                    </a>
+                                </div>
+                                <!-- END LOGO -->
+                                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                                <a href="javascript:;" class="menu-toggler"></a>
+                                <!-- END RESPONSIVE MENU TOGGLER -->
+                                <!-- BEGIN TOP NAVIGATION MENU -->
+                                <div class="top-menu">
+                                    <ul class="nav navbar-nav pull-right">
+                                        <!-- BEGIN NOTIFICATION DROPDOWN -->
+                                       <!-- <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                <i class="icon-bell"></i>
+                                                <span class="badge badge-default">7</span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li class="external">
+                                                    <h3>You have
+                                                        <strong>12 pending</strong> tasks</h3>
+                                                    <a href="app_todo.html">view all</a>
+                                                </li>
+                                                <li>
+                                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <span class="time">just now</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-success">
+                                                                        <i class="fa fa-plus"></i>
+                                                                    </span> New user registered. </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <span class="time">3 mins</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-danger">
+                                                                        <i class="fa fa-bolt"></i>
+                                                                    </span> Server #12 overloaded. </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <span class="time">10 mins</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-warning">
+                                                                        <i class="fa fa-bell-o"></i>
+                                                                    </span> Server #2 not responding. </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <span class="time">14 hrs</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-info">
+                                                                        <i class="fa fa-bullhorn"></i>
+                                                                    </span> Application error. </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <span class="time">2 days</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-danger">
+                                                                        <i class="fa fa-bolt"></i>
+                                                                    </span> Database overloaded 68%. </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <span class="time">3 days</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-danger">
+                                                                        <i class="fa fa-bolt"></i>
+                                                                    </span> A user IP blocked. </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <span class="time">4 days</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-warning">
+                                                                        <i class="fa fa-bell-o"></i>
+                                                                    </span> Storage Server #4 not responding dfdfdfd. </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <span class="time">5 days</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-info">
+                                                                        <i class="fa fa-bullhorn"></i>
+                                                                    </span> System Error. </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <span class="time">9 days</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-danger">
+                                                                        <i class="fa fa-bolt"></i>
+                                                                    </span> Storage server failed. </span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>-->
+                                        <!-- END NOTIFICATION DROPDOWN -->
+                                       
+                                        <li class="droddown dropdown-separator">
+                                            <span class="separator"></span>
+                                        </li>
+                                        <!-- BEGIN INBOX DROPDOWN -->
+                                    
+                                        <!-- END INBOX DROPDOWN -->
+                                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                                        <li class="dropdown dropdown-user dropdown-dark">
+                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                <img alt="" class="img-circle" src="images/avatar.jpg">
+                                                <span class="username username-hide-mobile" ng-cloak>{{userName}}</span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-default">
+                                                <li>
+                                                    <a href="/profile">
+                                                        <i class="icon-user"></i> My Profile </a>
+                                                </li>                                                
+                                                <li>
+                                                    <a href="app_inbox.html">
+                                                        <i class="icon-envelope-open"></i> My Inbox
+                                                        <span class="badge badge-danger"> 3 </span>
+                                                    </a>
+                                                </li>                                               
+                                                <li class="divider"> </li>
+                                                <li>
+                                                    <a href="/logout">
+                                                        <i class="icon-key"></i> Log Out </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- END USER LOGIN DROPDOWN -->
+                                        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                                      
+                                        <!-- END QUICK SIDEBAR TOGGLER -->
+                                    </ul>
+                                </div>
+                                <!-- END TOP NAVIGATION MENU -->
+                            </div>
+                        </div>
+                        <!-- END HEADER TOP -->
+                        <!-- BEGIN HEADER MENU -->
+                        <div class="page-header-menu">
+                            <div class="container">
+                                <!-- BEGIN HEADER SEARCH BOX -->
+                                <form class="search-form" action="page_general_search.html" method="GET">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search" name="query">
+                                        <span class="input-group-btn">
+                                     
+                                        </span>
+                                    </div>
+                                </form>
+                                <!-- END HEADER SEARCH BOX -->
+                                <!-- BEGIN MEGA MENU -->
+                                <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
+                                <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
+                               <div class="hor-menu  ">
+                                    <ul class="nav navbar-nav">
+                                        <li class="menu-dropdown classic-menu-dropdown active ">
+                                            <a href="#"> New Shipment
+                                                <span class="arrow"></span>
+                                            </a>
+                                         
+                                        </li>
+                                        <li class="menu-dropdown mega-menu-dropdown  ">
+                                            <a href="#">Get a Quote
+                                                <span class="arrow"></span>
+                                            </a>
+                                         </li>
+                                        <li class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="#"> Shipment
+                                                <span class="arrow"></span>
+                                            </a>
+                                       
+                                        </li>
+                                        <li class="menu-dropdown mega-menu-dropdown  mega-menu-full">
+                                            <a href="#"> Quotes
+                                                <span class="arrow"></span>
+                                            </a>
+                                       
+                                        </li>
+                                        <li class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="#"> Invoices
+                                                <span class="arrow"></span>
+                                            </a>
+                                            
+                                        </li>
+                                        <li class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="#">
+                                                <i class="icon-briefcase"></i> Test Company
+                                                <span class="arrow"></span>
+                                            </a>
+                 
+                                        </li>
+                                    </ul>
+                                </div>
+                      
+                                <!-- END MEGA MENU -->
+                            </div>
+                        </div>
+                        <!-- END HEADER MENU -->
+                    </div>
+                    <!-- END HEADER -->
+                </div>
+            </div>
+
+
+  
+    <div id="wrapper">
+
+        <div id="stage" class="container full-screen">
+            <div class="main main-content" id="content">
+                <div id="add-offer">
+                <!-- <div id="offer-map">
+                        <div class="map-info polaroid" id="offer-summary">
+                            <div class="summary-info-group pull-left" id="cost-summary">
+                                <p>Estimated Cost</p>
+                                <h3><strong class="cost total-group">$0.00</strong></h3>
+                                <div class="courier-label courier-group label label-success text-success u-isHidden">Courier Pricing</div>
+                                <a data-original-title="Your price can only change if there is a change in your shipment load, pickup or drop-off location, or accessorial requirements. You can also accrue excess wait time charges." title="" id="estimated-cost-input-help" href="">Will this change?</a>
+                            </div>
+                            <div class="summary-info-group pull-right" id="details-summary">
+                                <div class="row-fluid">
+                                    <div class="span12" id="nearby-driver"><i class="icon"><img src="images/closest-truck-icon.png"></i> <span id="closest-driver"></span></div>
+                                </div>
+                                <hr>
+                                <!--    <div class="row-fluid">
+                <p id="distance" class="lead"><i class="icon"><img src="/img/distance-icon.png"></i> ...</p>
+            </div>
+            <hr/> 
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div class="messages"></div>
+                                        <button id="tender-btn" class="btn btn-success pull-right confirm actionable disabled">Book now</button>
+                                        <button class="add-notes btn btn-primary">Add Notes</button>
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="offer-form">
+                        <div class="row-fluid">
+                            <form class="form span12" method="POST">
+                                <fieldset>
+                                    <div id="offer-route-information" class="info-group full-box first polaroid">
+                                        <header>
+                                            <h4>Route <span><a href=""><img id="route-input-help" title="" class="info-icon" src="images/information.png" data-original-title="Click &quot;Add&quot; to tell us where to pick up and drop off your shipment."></a></span></h4></header>
+                                        <div class="row-fluid">
+                                            <div id="origin-row" class="span12 location-row first">
+                                                <span id="origin">
+
+                <button type="button" class="change-origin btn pull-right" data-type="origin">Add</button>
+                <p class="lead muted"><i class="icon"><img src="images/origin-icon.png"></i> Origin</p>
+
+        </span>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid">
+                                            <div id="destination-row" class="span12 location-row">
+                                                <span id="destination">
+
+                <button type="button" class="btn change-destination pull-right" data-type="destination">Add</button>
+                <p class="lead muted"><i class="icon"><img src="images/destination-icon.png"></i> Destination</p>
+
+        </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="offer-accessorials" class="info-group full-box polaroid">
+                                        <header>
+                                            <h4>Accessorials <span><a href=""><img id="accessorials-input-help" title="" class="info-icon" src="images/information.png" data-original-title="These are additional features your shipment may have. Select any that apply."></a></span></h4></header>
+                                        <div class="row-fluid">
+                                            <div class="info-group-content accessorial-group-content">
+
+                                                <div id="accessorial-input-errors" class="text-error u-isHidden"></div>
+
+                                                <div class="accessorial-row row-fluid">
+                                                    <button type="button" id="cfs" class="ac-btn ac-docs first " data-el="cfs">
+                                                        <img src="images/cfs.png" class="cfs ac-icon">
+                                                        <span class="warning"><i class="icon icon-white icon-warning-sign"></i><br></span> CFS
+                                                    </button>
+
+                                                    <div id="cfs-details" class="modal hide fade doc-details" tabindex="-1" role="dialog" data-docs="cfs" data-el="airport" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                        <div class="modal-header">
+                                                            <h3>CFS Shipment Details</h3>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p class="lead">Please upload the following documents</p>
+                                                            <div class="row-fluid">
+                                                                <div class="span4 offset1">
+                                                                    <h4>DO <span class="cfs-do-status label label-important text-small">required</span></h4>
+                                                                    <div id="cfs-do-uploader" class="well dropzone document-upload cfs-document-upload dz-clickable">
+                                                                        <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span4 offset2">
+                                                                    <h4>Form 3461 <span class="cfs-atme-status label label-success u-isHidden"><i class="icon icon-ok icon-white"></i></span></h4>
+                                                                    <div id="cfs-atme-uploader" class="well dropzone document-upload cfs-document-upload dz-clickable">
+                                                                        <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="cfs-errors ac-doc-errors u-isHidden">
+                                                                Please Upload Required Documents
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button class="btn cancel-docs" data-dismiss="modal" aria-hidden="true">Cancel CFS Shipment</button>
+                                                            <button class="btn disabled save-docs" aria-hidden="true">Save</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <button type="button" id="airport_pickup" class="ac-btn ac-docs " data-el="airport"><img src="images/airport.png" alt="" class="airport ac-icon">
+                                                        <span class="warning"><i class="icon icon-white icon-warning-sign"></i><br></span> Airport
+                                                    </button>
+
+                                                    <div id="airport-details" class="modal hide fade doc-details" tabindex="-1" role="dialog" data-docs="airport_pickup" data-el="airport" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                        <div class="modal-header">
+                                                            <h3>Airport Pickup Details</h3>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p class="lead">Please upload the following documents</p>
+                                                            <div class="row-fluid">
+                                                                <div class="span4 offset1">
+                                                                    <h4>DO <span class="airport-do-status label label-important text-small">required</span></h4>
+                                                                    <div id="airport-do-uploader" class="well dropzone document-upload airport-document-upload dz-clickable">
+                                                                        <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span4 offset2">
+                                                                    <h4>ATME <span class="airport-atme-status label label-success u-isHidden"><i class="icon icon-ok icon-white"></i></span></h4>
+                                                                    <div id="airport-atme-uploader" class="well dropzone document-upload airport-document-upload dz-clickable">
+                                                                        <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="airport-errors ac-doc-errors u-isHidden">
+                                                                Please Upload Required Documents
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button class="btn cancel-docs" data-dismiss="modal" aria-hidden="true">Cancel Airport Pickup</button>
+                                                            <button class="btn disabled save-docs" aria-hidden="true">Save</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <button id="liftgate" class="ac-btn liftgate-btn "><img src="images/liftgate.png"> Liftgate
+                                                    </button>
+
+                                                    <button type="button" id="residential_delivery" class="ac-btn ac-std ">
+                                                        <img src="images/residential.png" class="residential"> Residential
+                                                    </button>
+                                                    <button type="button" id="pallet_jack" class="ac-btn ac-std ">
+                                                        <img src="images/pallet-jack.png" class="pallet-jack"> Pallet Jack
+                                                    </button>
+                                                    <button id="inside_delivery" class="ac-btn ac-std">
+                                                        <img src="images/lumper.png" class="lumper ac-icon">
+                                                        <span class="warning"><i class="icon icon-white icon-warning-sign"></i><br></span> Inside Delivery
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="offer-load-information" class="info-group full-box polaroid">
+                                        <header>
+                                            <h4>Load Details</h4></header>
+                                        <div class="row-fluid">
+                                            <div class="span12 info-group-content">
+                                                <div class="quantities-panel">
+
+                                                    <div class="accessorials-errors text-error"></div>
+                                                    <div class="load-errors text-error"></div>
+                                                    <div class="pallet-errors text-error"></div>
+                                                    <div class="courier-warning text-success u-isHidden">This Shipment Qualifies for Discount Courier Pricing</div>
+                                                    <div class="truckload-warning text-warning u-isHidden">This Shipment is a Truckload</div>
+                                                    <div class="load-controls row-fluid">
+                                                        <div class="span7">
+                                                            <label for="quantity-type" class="control-label">Type</label>
+                                                            <div class="btn-group quantity-type load-type" id="offer-load-type">
+
+                                                                <button type="button" class="btn Pallets-btn" data-value="pallets">Pallets</button>
+
+                                                                <button type="button" class="btn Boxes-btn" data-value="boxes">Boxes</button>
+
+                                                                <button type="button" class="btn Truckload-btn" data-value="truckload">Truckload</button>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="span3">
+                                                            <label for="quantity-type" class="control-label">Reference # <span><img id="reference-num-input-help" title="" class="info-icon" src="images/information-black.png" data-original-title="Enter your company's shipment identifier here so that you can keep track of it later."></span></label>
+                                                            <input type="text" name="tracking_id" id="offer-load-reference-number" class="tracking_id" value="" placeholder="ACME-1001">
+                                                        </div>
+
+                                                        <div class="span2">
+                                                            <label for="quantity-type" class="control-label">Weight (lbs)</label>
+                                                            <input type="text" name="weight" id="offer-load-weight" class="weight" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="load-summary">
+                                                        <p class="hint text-info">Select load types from the menu above.</p>
+                                                    </div>
+                                                </div>
+
+                                                <button type="button" id="offer-do" class="offer-docs docs-btn upload-button" data-doc="do">
+                                                    <span class="upload-messaging">Upload D.O.</span>
+                                                    <i class="icon icon-white icon-warning-sign"></i>
+                                                    <i class="icon icon-white icon-ok u-isHidden"></i>
+                                                </button>
+                                                <img id="doupload-input-help" title="" class="info-icon" src="images/information-black.png" data-original-title="(Optional) If your shipment has a Delivery Order, you can upload one here.">
+                                                <div id="offer-do-details" class="modal hide fade doc-details" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-header">
+                                                        <h3>Delivery Order Details</h3>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="lead">Please upload the following documents</p>
+                                                        <div class="row-fluid">
+                                                            <div class="span4 offset1">
+                                                                <h4>Delivery Order <span class="offer-do-status label label-info text-small">optional</span></h4>
+                                                                <div id="offer-do-uploader" class="well dropzone document-upload offer-do-document-upload dz-clickable">
+                                                                    <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="offer-do-errors doc-upload-errors u-isHidden">
+                                                            Please Upload Required Documents
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn cancel-offer-docs" data-docs="offer-do" data-dismiss="modal" aria-hidden="true">Cancel Delivery Order</button>
+                                                        <button class="btn disabled save-offer-docs" aria-hidden="true">Save</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div id="offer-pallet-size-input" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                <h3>Add Your Pallet Dimensions</h3>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="pallet-input-errors text-error cargo-hidden">
+                                                    You can only enter a number
+                                                </div>
+                                                <div class="row-fluid">
+                                                    <div class="span3">
+                                                        <label class="control-label">L <small class="muted pallets-unit">in</small></label>
+                                                        <input type="number" name="pallets.length" value="40" class="pallet-size-input pallet-size-length" min="1" pattern="\d*">
+                                                    </div>
+                                                    <div class="span3">
+                                                        <label class="control-label">W <small class="muted pallets-unit">in</small></label>
+                                                        <input type="number" name="pallets.width" value="40" class="pallet-size-input" min="1" pattern="\d*">
+                                                    </div>
+                                                    <div class="span3">
+                                                        <label class="control-label">H <small class="muted pallets-unit">in</small></label>
+                                                        <input type="number" name="pallets.height" value="60" class="pallet-size-input" min="1" pattern="\d*">
+                                                    </div>
+                                                    <select name="unit-type" id="" class="load-unit-type span2" data-type="pallets">
+                                                        <option value="in">in</option>
+                                                        <option value="cm">cm</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                                                <button class="btn btn-primary set-pallet-size" aria-hidden="true">Set</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="offer-scheduling-information" class="info-group full-box polaroid">
+                                        <header>
+                                            <h4>Scheduling</h4>
+                                        </header>
+                                        <div class="row-fluid">
+                                            <div class="span12 info-group-content">
+                                                <div class="scheduling-options btn-group">
+                                                    <button id="ship-now" class="btn btn-primary active">Ship Now</button>
+                                                    <button id="schedule" class="btn">Schedule</button>
+                                                </div>
+                                                <div class="messages text-info">
+                                                    <div id="view19-message-c21" class="alert alert-success sticky">
+                                                        <button type="button" class="close" data-dismiss="alert">×</button>Note: Please select a pickup and delivery time using PDT</div>
+                                                </div>
+                                                <div id="pickup">
+                                                    <p class="lead">Pickup</p>
+                                                    <div class="row-fluid">
+                                                        <div id="pickup-date" class="span5 location-scheduling-row">
+                                                            <div class="scheduled-pickup input-append u-isHidden">
+                                                                <input id="pickup_date" name="pickup_date" type="text" class="date">
+                                                                <span class="add-on">
+                            <i class="icon icon-calendar"></i>
+                        </span>
+                                                            </div>
+                                                            <p class="immediate-pickup date"><span class="label label-date">Today</span></p>
+                                                        </div>
+                                                        <div id="pickup-ready-time" class="span3 offset1">
+                                                            <label>Ready Time</label>
+                                                            <input id="pickup_after_time" name="pickup_after" type="text" class="time scheduled-pickup u-isHidden ui-timepicker-input" autocomplete="off">
+                                                            <p class="immediate-pickup"><span class="label label-time">now</span></p>
+                                                        </div>
+                                                        <div id="pickup-close-time" class="span3">
+                                                            <label>Cutoff Time</label>
+                                                            <input id="pickup_by_time" name="pickup_by" type="text" class="time ui-timepicker-input" autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="delivery">
+                                                    <p class="lead">Delivery</p>
+                                                    <div class="row-fluid">
+                                                        <div id="deliver-date" class="span5 location-scheduling-row">
+                                                            <div class="scheduled-delivery input-append">
+                                                                <input id="deliver_date" name="delivery_date" type="text" class="date">
+                                                                <span class="add-on">
+                            <i class="icon icon-calendar"></i>
+                        </span>
+                                                            </div>
+                                                        </div>
+                                                        <div id="deliver-after" class="span3 offset1">
+                                                            <label>Deliver After</label>
+                                                            <input id="deliver_after_time" name="deliver_after" type="text" class="time ui-timepicker-input" autocomplete="off">
+                                                        </div>
+                                                        <div id="delivery-close-time" class="span3">
+                                                            <label>Cutoff Time</label>
+                                                            <input id="deliver_by_time" name="deliver_by" type="text" class="time ui-timepicker-input" autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="at-capacity-messaging whiteout cargo-hidden">
+                        <div class="at-capacity-messaging-block text-center">
+                            <h1>Whoa! Busy Day!</h1>
+                            <p>Our trucks are all full at the moment. Check back later today! In the meantime, you can</p>
+                            <p>
+                                <button class="add-quote btn btn-success actionable">Get A Quote </button>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="generic-error-messaging whiteout cargo-hidden">
+                        <div class="generic-error-messaging-block text-center">
+                            <h1>Woops! Looks like something may have gone wrong.</h1>
+                            <p>Send over your shipment details to <a href="#">support@truper.com</a> for booking assistance</p>
+                        </div>
+                    </div>
+
+                    <div id="confirm-tender" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3>Please Confirm Your Tender</h3>
+                        </div>
+                        <div class="modal-body"></div>
+                        <div class="modal-footer">
+                            <div id="footer-text" class="pull-left">
+                                <p class="text-extra-sm spacing-sm"><strong>Notice of dry run and wait time charges:</strong></p>
+                                <p class="text-extra-sm spacing-sm"><strong class="text-error">Dry Runs:</strong> 50% of shipment cost.</p>
+                                <p class="text-extra-sm spacing-sm"><strong class="text-error">Wait Time:</strong> First hour is free, afterwards it is $60/hr billed in 15 min increments.</p>
+                                <p class="text-extra-sm spacing-sm"><strong>Notice related to hazardous material:</strong></p>
+                                <p class="text-extra-sm spacing-sm">Shipping hazardous materials through truper is not permitted. You hereby certify that you will not use the service to ship hazardous materials and that you accept all liability for any loss, damage or penalties resulting from your non-compliance herewith.</p>
+                            </div>
+                            <button class="btn" data-dismiss="modal" aria-hidden="true">Edit Order</button>
+                            <button class="btn btn-success save" data-dismiss="modal" aria-hidden="true">Book Your Shipment</button>
+                        </div>
+                    </div>
+
+                    <div id="offer-notes" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row-fluid">
+                                <textarea id="notes" rows="10" class="span12"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                            <button class="btn btn-success save-notes" data-dismiss="modal" aria-hidden="true">Save</button>
+                        </div>
+                    </div>
+                    <div class="progress-overlay">
+                        <div class="progress-message">
+                            <div class="overlay-message">
+                                <h2>Tendering your offer...</h2></div>
+                        </div>
+                        <div class="ajax-loader"></div>
+                    </div>
+
+                    <div id="credit-card-input" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="creditCardInput" aria-hidden="true">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3>One Last Thing ...</h3>
+
+                            <div class="modal-body">
+                                <p>Before you can book your first shipment, we need a verified payment method on your account.</p>
+
+                                <div class="messages"></div>
+
+                                <div id="credit-card-form">
+
+                                    <div class="span5">
+                                        <div class="errors"></div>
+                                        <form id="credit-card-details-form" class="form-horizontal pad-10-top">
+                                            <fieldset>
+                                                <!-- Card Number -->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="card_number">Card Number</label>
+                                                    <div class="controls">
+                                                        <input type="text" id="card_number" name="card_number" placeholder="" class="input-xlarge">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Expiry-->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="card_expiry">Card Expiry Date</label>
+                                                    <div class="controls controls-row">
+                                                        <select class="span2" name="expiration_month" id="expiration_month">
+                                                            <option value="1">01</option>
+                                                            <option value="2">02</option>
+                                                            <option value="3">03</option>
+                                                            <option value="4">04</option>
+                                                            <option value="5">05</option>
+                                                            <option value="6">06</option>
+                                                            <option value="7">07</option>
+                                                            <option value="8">08</option>
+                                                            <option value="9">09</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                        </select>
+
+                                                        <select class="span1" name="expiration_year">
+
+                                                            <option value="2016">2016</option>
+
+                                                            <option value="2017">2017</option>
+
+                                                            <option value="2018">2018</option>
+
+                                                            <option value="2019">2019</option>
+
+                                                            <option value="2020">2020</option>
+
+                                                            <option value="2021">2021</option>
+
+                                                            <option value="2022">2022</option>
+
+                                                            <option value="2023">2023</option>
+
+                                                            <option value="2024">2024</option>
+
+                                                            <option value="2025">2025</option>
+
+                                                            <option value="2026">2026</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <!-- CVV -->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="security_code">Card CVV</label>
+                                                    <div class="controls">
+                                                        <input type="number" id="security_code" name="security_code" placeholder="" class="span1">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Submit -->
+
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <a href="" id="launch-manual-payment" class="pull-right">Prefer to pay manually?</a>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn" data-dismiss="modal" aria-hidden="true">I'll Book Later</button>
+                                <button class="btn btn-success save-credit-card actionable" aria-hidden="true">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="manual-payment-input" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="manualPaymentInput" aria-hidden="true">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+                            <h3 id="manual-payer-header">Become a Manual Payer</h3>
+                            <br>
+                            <div id="manual-payment-application-success">
+                                <p>Interested in making manual payments? Fill out this short credit application to become eligible.</p>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <a id="download-manual-payment-form" href="#" class="btn btn-info bump-right download-form-manual-application"><i class="icon icon-white icon-download"></i> Download Form</a>
+                                    <a id="upload-manual-payment" class="update-action-box btn btn-success">Upload Completed Form</a>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn" id="go-back-to-credit-card-prompt" data-dismiss="modal" aria-hidden="true">Use Credit Card Instead</button>
+                                <button class="btn btn-success save-manual-payment-form actionable" aria-hidden="true">Submit</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #content -->
+        </div>
+        <!-- .container -->
+        <div id="push"></div>
+    </div>
+    <!-- #wrapper -->
+    <div id="footer"></div>
+    
+    <div tabindex="-1" role="dialog" id="quote-add" class="modal hide fade enable-scroll">
+        <div class="modal-header" style="border-bottom:none; padding-top: 0; padding-bottom : 0;"></div>
+        <div id="quote-form" class="modal-body" style="max-height:none;">
+            <div class="messages"></div>
+            <div class="row-fluid">
+                <div class="span4">
+                    <h4>Get A Quote</h4>
+                </div>
+                <div class="pull-right">
+                    <h4 style="float:left;">Estimated Cost</h4>
+                    <div id="quote-total" class="well well-small quote-total lead" style="float:left;display:block;width: auto;margin-left: 10px;min-width:50px"></div>
+                    <div class="courier-label courier-group label label-success text-success u-isHidden">Courier Pricing</div>
+                </div>
+            </div>
+            <div id="disclaimer" style="margin:2px"></div>
+            <hr>
+            <div id="quote-route-information" class="row-fluid">
+                <div class="span12">
+                    <div class="row-fluid">
+                        <div class="errors text-warning span12"></div>
+                    </div>
+                    <div class="row-fluid">
+                        <div id="quote-origin" class="span6">
+                            <div class="quote-location quote-origin">
+                                <label for="quote-origin-fav">Favorite Origin</label>
+                                <input type="text" id="origin-fav" class="quote-typeahead" placeholder="Enter Saved Location">
+                                <br> or
+                                <br>
+                                <label for="quote-origin-input">Origin Zip Code</label>
+                                <input type="text" name="origin" id="quote-origin" class="location-input">
+                            </div>
+                        </div>
+                        <div id="quote-destination" class="span6">
+                            <div class="quote-location quote-destination">
+                                <label for="quote-destination-fav">Favorite Destination</label>
+                                <input type="text" id="destination-fav" class="quote-typeahead" placeholder="Enter Saved Location">
+                                <br> or
+                                <br>
+                                <label for="quote-destination-input">Destination Zip Code</label>
+                                <input type="text" name="destination" id="quote-destination" class="location-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="quote-accessorial-information" class="row-fluid">
+                <header>
+                    <h4>Accessorials <span><a href=""><img id="accessorials-input-help" title="" class="info-icon" src="img/icons/information.png" data-original-title="These are additional features your shipment may have. Select any that apply."></a></span></h4></header>
+                <div class="row-fluid">
+                    <div class="info-group-content accessorial-group-content">
+
+                        <div id="quote-accessorial-input-errors" class="text-error u-isHidden"></div>
+
+                        <div class="accessorial-row row-fluid">
+                            <button type="button" id="cfs" class="ac-btn ac-docs first " data-el="cfs">
+                                <img src="img/accessorials/cfs.png" class="cfs ac-icon">
+                                <span class="warning"><i class="icon icon-white icon-warning-sign"></i><br></span> CFS
+                            </button>
+
+                            <button type="button" id="airport_pickup" class="ac-btn ac-docs " data-el="airport"><img src="img/accessorials/airport.png" alt="" class="airport ac-icon">
+                                <span class="warning"><i class="icon icon-white icon-warning-sign"></i><br></span> Airport
+                            </button>
+
+                            <button id="liftgate-quote" class="ac-btn liftgate-btn "><img src="img/accessorials/liftgate.png"> Liftgate
+                            </button>
+
+                            <button type="button" id="residential_delivery" class="ac-btn ac-std ">
+                                <img src="img/accessorials/residential.png" class="residential"> Residential
+                            </button>
+                            <button type="button" id="pallet_jack" class="ac-btn ac-std ">
+                                <img src="img/accessorials/pallet-jack.png" class="pallet-jack"> Pallet Jack
+                            </button>
+                            <button id="inside_delivery" class="ac-btn ac-std">
+                                <img src="img/accessorials/lumper.png" class="lumper ac-icon">
+                                <span class="warning"><i class="icon icon-white icon-warning-sign"></i><br></span> Inside Delivery
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="quote-load-information" class="row-fluid">
+                <header>
+                    <h4>Load Details</h4></header>
+                <div class="row-fluid">
+                    <div class="span12 info-group-content">
+                        <div class="quantities-panel">
+
+                            <div class="quote-accessorials-errors text-error"></div>
+
+                            <div class="accessorials-errors text-error"></div>
+                            <div class="load-errors text-error"></div>
+                            <div class="pallet-errors text-error"></div>
+                            <div class="courier-warning text-success u-isHidden">This Shipment Qualifies for Discount Courier Pricing</div>
+                            <div class="truckload-warning text-warning u-isHidden">This Shipment is a Truckload</div>
+                            <div class="load-controls row-fluid">
+                                <div class="span7">
+                                    <label for="quantity-type" class="control-label">Type</label>
+                                    <div class="btn-group quantity-type load-type" id="offer-load-type">
+
+                                        <button type="button" class="btn Pallets-btn" data-value="pallets">Pallets</button>
+
+                                        <button type="button" class="btn Boxes-btn" data-value="boxes">Boxes</button>
+
+                                        <button type="button" class="btn Truckload-btn" data-value="truckload">Truckload</button>
+
+                                    </div>
+                                </div>
+
+                                <div class="span2">
+                                    <label for="quantity-type" class="control-label">Weight (lbs)</label>
+                                    <input type="text" name="weight" id="quote-load-weight" class="weight" value="">
+                                </div>
+                            </div>
+                            <div class="load-summary">
+                                <p class="hint text-info">Select load types from the menu above.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="quote-pallet-size-input" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3>Add Your Pallet Dimensions</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="pallet-input-errors text-error cargo-hidden">
+                            You can only enter a number
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <label class="control-label">L <small class="muted pallets-unit">in</small></label>
+                                <input type="number" name="pallets.length" value="40" class="pallet-size-input pallet-size-length" min="1" pattern="\d*">
+                            </div>
+                            <div class="span3">
+                                <label class="control-label">W <small class="muted pallets-unit">in</small></label>
+                                <input type="number" name="pallets.width" value="40" class="pallet-size-input" min="1" pattern="\d*">
+                            </div>
+                            <div class="span3">
+                                <label class="control-label">H <small class="muted pallets-unit">in</small></label>
+                                <input type="number" name="pallets.height" value="60" class="pallet-size-input" min="1" pattern="\d*">
+                            </div>
+                            <select name="unit-type" id="" class="load-unit-type span2" data-type="pallets">
+                                <option value="in">in</option>
+                                <option value="cm">cm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button class="btn btn-primary set-pallet-size" aria-hidden="true">Set</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row-fluid">
+                <div class="span8">
+                    <button class="btn" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary disabled" id="new-quote-save">Save quote</button>
+                </div>
+            </div>
+        </div>
+    </div><span style="display: none;"><iframe style="display: none !important;" id="_olark_framesocket32311" src="https://static.olark.com/jsclient-bucket6/storage.html?v=1466461114189#TK8411534650880796"></iframe>
+</span>
+    <div id="habla_beta_container_do_not_rely_on_div_classes_or_names" class="habla-browser-chrome habla-desktop olrk-noquirks">
+        <div id="hbl_operator_state_div" class="olrk-away">
+            <div id="hbl_region" class="olrk-normal">
+                <div id="habla_window_state_div" class=" olrk-state-compressed">
+                    <div id="habla_window_div" style="margin: 0px 20px; bottom: 0px; right: 0px; display: none; position: fixed;" class="habla_window_div_base hbl_pal_main_width olrk-fixed-bottom olrk-fixed-right ">
+                        <div id="habla_compressed_div" style="display: block;"></div>
+                        <div id="habla_panel_div" class="habla_panel_border hbl_pal_main_bg hbl_pal_panel_border hbl_pal_main_font_family hbl_pal_main_font_size " style="display: block;">
+                            <div id="habla_both_div" style="display: block;">
+                                <div id="habla_topbar_div" class="habla_topbar_div_normal hbl_pal_title_fg hbl_pal_title_bg habla_topbar_div_compressed "><a id="habla_sizebutton_a" class="habla_button habla_button_a_normal hbl_pal_header_font_size hbl_pal_main_font_family hbl_pal_button_bg hbl_pal_button_fg ">^</a><a id="habla_oplink_a" class="habla_oplink_a_normal hbl_pal_header_font_size hbl_pal_title_fg ">Shipment Support</a></div>
+                            </div>
+                            <div id="habla_expanded_div" style="display: none;">
+                                <div id="habla_middle_div">
+                                    <div id="habla_middle_wrapper_div">
+                                        <div id="habla_conversation_div" class="hbl_panel habla_conversation_div hbl_pal_main_height hbl_pal_control_border hbl_pal_main_fg hbl_pal_main_bg   habla_conversation_message_on " style="height: 400px; overflow: hidden; display: none;"><span id="hbl_body_message">Questions? We'd love to chat. Please let us know your shipment ID# if applicable. </span></div>
+                                        <div id="habla_offline_message_sent_div" class="hbl_panel habla_offline_message_sent_div hbl_pal_main_height hbl_pal_control_border hbl_pal_main_fg " style="display: none;">Thanks for contacting us! Email Support Available 7am to 5pm. </div>
+                                        <div id="habla_offline_message_div" class="hbl_panel habla_offline_message_div hbl_pal_control_border hbl_pal_main_fg " style="display: block;"><span id="habla_offline_message_span">Support Available 7am to 5pm.  Please include Shipment ID# if applicable. </span>
+                                            <div class="hbl_txt_wrapper">
+                                                <textarea id="habla_name_input" name="habla_name_input" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="Enter Name" style="height: 20px; display: block;"></textarea>
+                                            </div>
+                                            <div class="hbl_txt_wrapper">
+                                                <textarea id="habla_offline_email_input" name="habla_offline_email_input" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="Enter Email" style="height: 20px; display: block;"></textarea>
+                                            </div>
+                                            <div class="hbl_txt_wrapper">
+                                                <textarea id="habla_offline_phone_input" name="habla_offline_phone_input" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="Enter Shipment ID" style="height: 20px; display: block;"></textarea>
+                                            </div>
+                                            <div class="hbl_txt_wrapper">
+                                                <textarea id="habla_offline_body_input" name="habla_offline_body_input" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="Please include detail so we can best assist you.  Shipment ID is required." style="height: 315px; display: block;"></textarea>
+                                            </div><span id="habla_offline_error_span" class="habla_offline_error_span "></span>
+                                            <input id="habla_offline_submit_input" name="habla_offline_submit_input" type="submit" class="habla_offline_submit_input hbl_pal_offline_submit_fg hbl_pal_control_border hbl_pal_offline_submit_bg " value="Send Email" style="display: block;">
+                                            <div id="habla_offline_clear_div" class="clear_style "></div>
+                                        </div>
+                                        <div id="habla_pre_chat_div" class="hbl_panel habla_pre_chat_div hbl_pal_main_height hbl_pal_main_fg " style="display: none; height: 400px;"><span id="habla_pre_chat_span">Hi, I am around, click 'start chatting' to contact me.</span>
+                                            <div class="hbl_txt_wrapper">
+                                                <textarea id="habla_pre_chat_name_input" name="habla_pre_chat_name_input" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="Enter Name" style="height: 20px; line-height: 20px;"></textarea>
+                                            </div>
+                                            <div class="hbl_txt_wrapper">
+                                                <textarea id="habla_pre_chat_email_input" name="habla_pre_chat_email_input" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="Enter Email" style="height: 20px; line-height: 20px;"></textarea>
+                                            </div>
+                                            <div class="hbl_txt_wrapper" style="display: none;">
+                                                <textarea id="habla_pre_chat_phone_input" name="habla_pre_chat_phone_input" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="Enter Shipment ID" style="height: 20px; line-height: 20px; display: none;"></textarea>
+                                            </div><span id="habla_pre_chat_error_span"></span>
+                                            <input id="habla_pre_chat_submit_input" name="habla_pre_chat_submit_input" type="submit" class="habla_pre_chat_form_field habla_offline_submit_input hbl_pal_offline_submit_fg hbl_pal_control_border hbl_pal_offline_submit_bg " value="Click here to start chatting">
+                                            <div id="habla_pre_chat_clear_div" class="clear_style "></div>
+                                        </div>
+                                    </div>
+                                    <form id="habla_chatform_form" action="#" method="GET" autocomplete="off" class="habla_chatform_form " style="display: none;">
+                                        <div id="habla_input_div" class="habla_input_div ">
+                                            <div class="hbl_txt_wrapper">
+                                                <textarea id="habla_wcsend_input" name="habla_wcsend_input" size="undefined" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="Type here and hit enter to chat" disabled="" style="line-height: 20px; height: 20px; display: none;"></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div style="clear: both;">
+                                    <div id="olk-b-12159" data-reactid=".0">
+                                        <div class="wrapper-olk-2780" style="display:none;" data-reactid=".0.0">
+                                            <p class="description-olk-2780" data-reactid=".0.0.0">10,000+ companies rely on Olark software to chat with customers directly.</p>
+                                            <button class="cancel-button-olk-2780" data-reactid=".0.0.1">Go back</button>
+                                            <button class="referral-button-olk-2780" data-reactid=".0.0.2">Try Olark on your site</button>
+                                        </div><a class="brand-olk-2780" data-reactid=".0.1">Olark Live Chat</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="habla_closed_div" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     
+</body>
+
+</html>

@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+	<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	
+<meta name="description" content="Ready to find reliable carriers? Sign up to access local drivers. Need to find shipments? Sign up as a carrier and find new jobs that fit your route."/>
+
+
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<style type="text/css">
+    button.close {
+	    background: transparent none repeat scroll 0 0;
+	    border: 0 none;
+	    cursor: pointer;
+	    padding: 0;
+	}
+	.close {
+	    color: red;
+	    float: right;
+	    font-size: 20px;
+	    font-weight: bold;
+	    line-height: 20px;
+	   /* opacity: 0.2;*/
+	    text-shadow: 0 1px 0 #ffffff;
+	}
+	.alert{
+		display: none;
+	    background-color: #FFEFEF;
+	    border: 1px solid #ff0066;
+	    border-radius: 4px;
+	    color: red;
+	    text-align: left;
+	    margin-bottom: 2px;
+	    padding: 4px 8px 4px 0px;
+	    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+		}
+	.form_field input[type="text"]:focus {
+	}
+	input.ng-invalid {
+    background-color:pink;
+}	
+</style>
+
+</head>
+<body class="page page-id-372 page-template-default" ng-app="app" ng-controller="myCtrl">
+		
+	<div id="page" class="site">
+			<header id="masthead" class="transparent" role="banner">
+				<a id="hamburger-menu-button"
+				   href="javascript:void(0)" class="button">
+					<div><span></span></div>
+				</a>
+				<div id="hamburger-menu">
+					<nav class="menu">
+						<div class="hamburger-buttons">
+							<a href="tel:(866) 513-2343">
+								<button class="phone cta-button">
+									Call now
+								</button>
+							</a>
+							<a href="/signup/">
+								<button class="signup cta-button">
+									Sign up
+								</button>
+							</a>
+						</div>
+						<div class="menu-nagivation-menu-container"><ul id="primary-menu" class="menu"><li id="menu-item-555" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-555"><a href="#">Shippers</a></li>
+<li id="menu-item-556" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-556"><a href="#">Carriers</a></li>
+<li id="menu-item-560" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-560"><a>Services</a>
+</li>
+<li id="menu-item-799" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-799"><a href="#">About Us</a></li>
+</ul></div>					</nav>
+				</div>
+				<div class="width-wrapper">
+					<div class="logo">
+						<a href="#" rel="home">
+							<img class="dark" src="images/cargomatic-logo-dark1.png" alt="logo">
+							<img class="light" src="images/cargomatic-light-green-logo1.png" alt="logo">
+						</a>
+					</div>
+					<div class="nav-menu">
+						<div class="menu-nagivation-menu-container"><ul id="primary-menu" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-555"><a href="#">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-556"><a href="#">Shippers</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-560"><a>Carriers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-799"><a href="#">Services</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-799"><a href="#">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-799"><div class="buttons"><a href="/login"><button class="login cta-button">	Login</button></a>
+					<a><button class="signup cta-button">Sign up</button></a>
+					</div></li>
+</ul></div></div>
+	
+					
+				</div>
+			</header>
+<div id="signup" class="full-page-form"
+     style="background-image:url(images/header-2-528-1.jpg)">
+	<div id="form" class="form-container">
+		<h2 id="title">Sign Up</h2>
+		<p>Select one:</p>
+		<div id="select_type" class="radio-group">
+			<div class="shipper-container">
+								<input id="user-shipper" type="radio" data-ng-model="logindetails.usertype" value="shipper" name="userType"
+				       checked>
+				<label class="checked" for="user-shipper">
+					<span class="content">I am a Shipper</span>
+				</label>
+			</div>
+
+			<div class="carrier-container">
+								<input id="user-carrier" type="radio" data-ng-model="logindetails.usertype" value="carrier" name="userType" 
+				       >
+				<label for="user-carrier">
+					<span class="content">I am a Carrier</span>
+				</label>
+			</div>
+		</div>
+
+		<div class="names">
+			<div class="form_field first-name">
+				<input type="text" name="first_name" id="first_name"
+					   placeholder="First name" maxlength="40" data-ng-model="logindetails.first_name" ng-focus="chngbrdr('first_name')">
+				<div class="validation-error">
+					Please enter your first name.
+				</div>				
+			</div>
+
+			<div class="form_field last-name">
+				<input type="text" name="last_name" id="last_name"i
+					   placeholder="Last name" maxlength="40" data-ng-model="logindetails.last_name">
+				<div class="validation-error">
+					Please enter your last name.
+				</div>
+			</div>
+		</div>		
+		<div class="form_field">
+			<input type="text" name="company_name" id="company_name"
+			       placeholder="Company name" maxlength="60" data-ng-model="logindetails.company_name" ng-focus="chngbrdr('company_name')">
+			<div class="validation-error">
+					Please enter your company's name.
+			</div>
+		</div>
+
+		<div class="form_field phone">
+			<input type="text" name="phone" id="phone" placeholder="Phone (555 555 5555)" maxlength="12" data-ng-model="logindetails.phone" ng-blur="formVal('phone')" ng-focus="chngbrdr('phone')">
+			<div class="validation-error">
+				Please enter a valid US phone number.
+			</div>
+		</div>
+
+		<div class="form_field city">
+			<input type="text" name="city" id="city" placeholder="City" data-ng-model="logindetails.city" ng-focus="chngbrdr('city')">
+			<div class="validation-error">
+				Please enter a valid city.
+			</div>
+		</div>
+
+		<div class="form_field state">
+			<input type="text" name="state" id="state"
+			       placeholder="State" data-ng-model="logindetails.state" ng-focus="chngbrdr('state')">
+			<div class="validation-error">
+				Please enter a valid state.
+			</div>
+		</div>
+
+		<div class="form_field" ng-show="logindetails.usertype=='carrier'">
+			<input type="text" name="dot_number" id="dot_number"
+			       maxlength="20" placeholder="CA/MC number" data-ng-model="logindetails.dot_number" ng-blur="formVal('dot_number')" ng-focus="chngbrdr('dot_number')">
+			<div class="validation-error">
+				Please enter your CA/MC number.
+			</div>
+		</div>
+
+		<div class="form_field">
+			<input type="text" name="email" id="email" placeholder="Email address" maxlength="40" data-ng-model="logindetails.email" ng-blur="formVal('email')" ng-focus="chngbrdr('email')">
+			<div class="validation-error">
+				Please enter a valid email address.
+			</div>
+		</div>
+
+		<div class="form_field">
+			<input type="text" name="password" id="password" placeholder="Password" data-ng-model="logindetails.password" ng-focus="chngbrdr('password')">
+			<div class="validation-error">
+				Please enter a password.
+			</div>
+		</div>
+
+		<div class="form_field terms checkbox-container">
+			<label for="terms">
+				<input type="checkbox" name="terms" id="terms">
+				By Signing up I agree to the
+				<a>Terms of Service</a>
+			</label>
+			<div class="validation-error">
+				Please accept our terms in order to continue.
+			</div>
+		</div>
+
+		<div class="form_field" id="submit">
+			<button data-ng-click="funSubmit();">Submit</button>
+		</div>
+
+		<div class="form-error-message">
+		</div>
+		<div id="fnameError" class="alert alert-success sticky">
+        	<button type="button" class="close" data-dismiss="alert" onClick="document.getElementById('fnameError').style.display='none'">×</button>ERROR :   Please provide first name
+   		</div>
+   		<div id="cnameError" class="alert alert-success sticky">
+       		<button type="button" class="close" data-dismiss="alert" onClick="document.getElementById('cnameError').style.display='none'">×</button>ERROR :   Please provide company name
+   		</div>
+   		<div id="phoneError" class="alert alert-success sticky">
+       		<button type="button" class="close" data-dismiss="alert" onClick="document.getElementById('phoneError').style.display='none'">×</button>ERROR :   Please provide {{errmsgphn}} phone number
+   		</div>
+   		<div id="cityError" class="alert alert-success sticky">
+       		<button type="button" class="close" data-dismiss="alert" onClick="document.getElementById('cityError').style.display='none'">×</button>ERROR :   Please provide city name
+   		</div>
+   		<div id="stateError" class="alert alert-success sticky">
+       		<button type="button" class="close" data-dismiss="alert" onClick="document.getElementById('stateError').style.display='none'">×</button>ERROR :   Please provide state name
+   		</div>
+   		<div id="camcError" class="alert alert-success sticky">
+       		<button type="button" class="close" data-dismiss="alert" onClick="document.getElementById('camcError').style.display='none'">×</button>ERROR :   Please provide CA/MC Number
+   		</div>
+   		<div id="emailError" class="alert alert-success sticky">
+       		<button type="button" class="close" data-dismiss="alert" onClick="document.getElementById('emailError').style.display='none'">×</button>ERROR :   Please provide {{errmsgmail}} Email address
+   		</div>
+   		<div id="passwordError" class="alert alert-success sticky">
+       		<button type="button" class="close" data-dismiss="alert" onClick="document.getElementById('passwordError').style.display='none'">×</button>ERROR :   Please provide password for your Truper account
+   		</div>
+
+
+	</div>
+
+
+</div><!-- #signup  -->
+
+<footer id="footer">
+	<hr>
+	<div class="width-wrapper">
+		 
+					<div class="sitemap">
+				<div class="store-links">
+					<a href="#" target="_blank">
+						<img src="images/appstore.png" alt="Get Cargomatic in Apple AppStore">
+					</a>
+					<a href="#" target="_blank">
+						<img src="images/playstore.png" alt="Get Cargomatic on Google Play">
+					</a>
+				</div>
+				<div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-1131" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1131"><a>Company</a>
+<ul class="sub-menu">
+	<li id="menu-item-973" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-973"><a href="#">Events</a></li>
+	<li id="menu-item-967" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-967"><a href="/press/">Press</a></li>
+	<li id="menu-item-875" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-875"><a href="#">Blog</a></li>
+	<li id="menu-item-756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-756"><a href="#">Careers</a></li>
+</ul>
+</li>
+<li id="menu-item-769" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-769"><a>Support</a>
+<ul class="sub-menu">
+	<li id="menu-item-761" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-761"><a href="#">Contact</a></li>
+	<li id="menu-item-942" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-942"><a href="https://www.truper.com/faq/">FAQ</a></li>
+	<li id="menu-item-758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-758"><a href="https://www.truper.com/privacy-policy/">Privacy Policy</a></li>
+	<li id="menu-item-759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-759"><a href="https://www.truper.com/terms-of-service/">Terms of Service</a></li>
+</ul>
+</li>
+</ul></div>			</div>
+							<ul id="social_media">	
+										<li>
+						<a href="https://www.linkedin.com/company/truper" class="linkedin" target="_blank"></a>
+					</li>
+										<li>
+						<a href="https://twitter.com/truper" class="twitter" target="_blank"></a>
+					</li>
+										<li>
+						<a href="https://www.facebook.com/truper" class="facebook" target="_blank"></a>
+					</li>
+										<li>
+						<a href="https://www.youtube.com/user/truper" class="youtube" target="_blank"></a>
+					</li>
+										<li>
+						<a href="https://vimeo.com/user43053277" class="vimeo" target="_blank"></a>
+					</li>
+										<li>
+						<a href="https://plus.google.com/+truper" class="googleplus" target="_blank"></a>
+					</li>
+										<li>
+						<a href="https://instagram.com/truper/" class="instagram" target="_blank"></a>
+					</li>
+									</ul>
+					<p style="text-align: center;">Call Truper (866) 513-2343. <br class="mobile-break">Email <a href="mailto:support@truper.com?Subject=WebsiteInquiry" target="_top">support@truper.com</a></p>
+<p style="text-align: center;">Truper 228 Main Street, Venice, CA 90291</p>
+<p style="text-align: center;">©2016 Truper Inc All Rights Reserved |  <a href="/privacy-policy/">Privacy</a> | <a href="/terms-of-service/">Terms of Service</a> | <a href="/sitemap/">Site Map</a></p>
+		</div><!-- .width-wrapper  -->
+</footer>
+</div><!-- #page.site  -->
+
+
+		
+		</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Bootstrap Form Controls</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+       
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+       	<style>
+            [ng\:cloak],[ng-cloak],[data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak{
+                display: none !important;
+            }
+        </style>
+        <style type="text/css">
+            button.close, button.sclose{
+                background: transparent none repeat scroll 0 0;
+                border: 0 none;
+                cursor: pointer;
+                padding: 0 11px 20px 0;
+            }
+            .close, .sclose{
+                color: red;
+                float: right;
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 20px;
+                text-shadow: 0 1px 0 #ffffff;
+            }
+            .alert,.salert{
+                display: none;                
+                border: 1px solid #ff0066;
+                border-radius: 4px;
+                text-align: left;
+                margin: 2px auto;
+                padding: 4px 8px 4px 0px;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+            }
+            .alert{
+                background-color: #FFEFEF;color: red;
+            }
+            .salert{background-color: #dff0d8!important;border-color: #d6e9c6!important;color: #3c763d!important;}
+            .sclose{color: #3c763d!important;}
+            #preimg{width: 100%;height:100%;}
+            .btn.default.fileinput-exists {
+                background: #48a2de none repeat scroll 0 0;
+                border-color: #48a2de;
+                color: #fff;
+                float: left;
+                height: 34px;
+                margin-top: 3px;
+                text-align: center;
+                width: 80%;
+                font-weight: bold;
+            }
+            .containerq{
+                width:80%;
+                background: #e7505a none repeat scroll 0 0;
+                border:black solid 1px;
+                text-align:center;
+                height: 34px; 
+                color: #fff;
+                border-color:#e7505a;
+                font-weight: bold;
+            }
+            input[type="file"] {opacity: 0;position: relative;width: 100%;margin-top: -14px;}
+            .erar{display: block!important;}
+            
+        </style>        	  
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="favicon.ico" />
+        <script>
+            var valImg = function(){
+                var imgvar = document.getElementById('uploadFile').value;
+                if(imgvar=="" || imgvar==null || imgvar==undefined)return false;
+                return true;
+            };
+            var loadFile = function(event) {
+                var preimg = document.getElementById('preimg');
+                preimg.src = URL.createObjectURL(event.target.files[0]);
+            };
+        </script>
+		</head>
+    <!-- END HEAD -->
+
+    <body class="page-container-bg-solid" ng-app="app" ng-controller="profile">
+        <div class="page-wrapper" ng-init="gtprofil()">
+            <div class="page-wrapper-row">
+                <div class="page-wrapper-top">
+                    <!-- BEGIN HEADER -->
+                    <div class="page-header">
+                        <!-- BEGIN HEADER TOP -->
+                        <div class="page-header-top">
+                            <div class="container">
+                                <!-- BEGIN LOGO -->
+                                <div class="page-logo">
+                                    <a href="index.html">
+                                        <img src="images/logo-default.jpg" alt="logo" class="logo-default">
+                                    </a>
+                                </div>
+                                <!-- END LOGO -->
+                                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                                <a href="javascript:;" class="menu-toggler"></a>
+                                <!-- END RESPONSIVE MENU TOGGLER -->
+                                <!-- BEGIN TOP NAVIGATION MENU -->
+                         <div class="top-menu">
+                                    <ul class="nav navbar-nav pull-right">
+                                      <li class="droddown dropdown-separator">
+                                            <span class="separator"></span>
+                                        </li>
+                                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                                        <li class="dropdown dropdown-user dropdown-dark">
+                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                <img alt="" class="img-circle" ng-src="images/{{data.imageUrl}}">
+                                                <span class="username username-hide-mobile">{{data.userFirstName}}</span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-default">
+                                                <li>
+                                                    <a href="page_user_profile_1.html">
+                                                        <i class="icon-user"></i> My Profile </a>
+                                                </li>
+                                                <li>
+                                                    <a href="app_inbox.html">
+                                                        <i class="icon-envelope-open"></i> My Inbox
+                                                       
+                                                    </a>
+                                                </li>
+                                                <li class="divider"> </li>
+                                                <li>
+                                                    <a href="/logout">
+                                                        <i class="icon-key"></i> Log Out </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- END USER LOGIN DROPDOWN -->
+                                    </ul>
+                                </div>
+                                <!-- END TOP NAVIGATION MENU -->
+                            </div>
+                        </div>
+                        <!-- END HEADER TOP -->
+                        <!-- BEGIN HEADER MENU -->
+        <div class="page-header-menu">
+                            <div class="container">
+                                <!-- BEGIN HEADER SEARCH BOX -->
+                                <div class="search-form">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search" name="query">
+                                        <span class="input-group-btn">
+                                     
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- END HEADER SEARCH BOX -->
+                               <div class="hor-menu  ">
+                                    <ul class="nav navbar-nav">
+                                        <li class="menu-dropdown classic-menu-dropdown active ">
+                                            <a href="#"> New Shipment
+                                                <span class="arrow"></span>
+                                            </a>
+                                         
+                                        </li>
+                                        <li class="menu-dropdown mega-menu-dropdown  ">
+                                            <a href="#">Get a Quote
+                                                <span class="arrow"></span>
+                                            </a>
+                                         </li>
+                                        <li class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="#"> Shipment
+                                                <span class="arrow"></span>
+                                            </a>
+                                       
+                                        </li>
+                                        <li class="menu-dropdown mega-menu-dropdown  mega-menu-full">
+                                            <a href="#"> Quotes
+                                                <span class="arrow"></span>
+                                            </a>
+                                       
+                                        </li>
+                                        <li class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="#"> Invoices
+                                                <span class="arrow"></span>
+                                            </a>
+                                            
+                                        </li>
+                                        <li class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="#">
+                                                <i class=""></i> {{data.companyName}}
+                                                <span class="arrow"></span>
+                                            </a>
+                                         <ul class="dropdown-menu pull-left">
+                                              <li class=" ">
+                                                    <a href="index.html" class="nav-link  ">
+                                                        <i class="icon-bar-chart"></i> Manage
+                                                       
+                                                    </a>
+                                                </li>
+                                                <li class=" ">
+                                                    <a href="dashboard_2.html" class="nav-link  ">
+                                                        <i class="icon-bulb"></i> Billing </a>
+                                                </li>
+                                                <li class=" ">
+                                                    <a href="dashboard_3.html" class="nav-link  ">
+                                                        <i class="icon-graph"></i>Notifications
+                                                      
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                      
+                                <!-- END MEGA MENU -->
+                            </div>
+                        </div>
+                        <!-- END HEADER MENU -->
+                    </div>
+                    <!-- END HEADER -->
+                </div>
+            </div>
+            <div class="page-wrapper-row full-height">
+                <div class="page-wrapper-middle">
+                    <!-- BEGIN CONTAINER -->
+                    <div class="page-container">
+                        <!-- BEGIN CONTENT -->
+                        <div class="page-content-wrapper">
+                            <!-- BEGIN CONTENT BODY -->
+                            <!-- BEGIN PAGE HEAD-->
+                            <div class="page-head">
+                                <div class="container">
+                                    <!-- BEGIN PAGE TITLE -->
+                                    <div class="page-title">
+                                        <h1>{{data.userFirstName}}&nbsp{{data.userLastName}}&nbspProfile | Account
+                                            <small>user account page</small>
+                                        </h1>
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                            <!-- END PAGE HEAD-->
+                            <!-- BEGIN PAGE CONTENT BODY -->
+                            <div class="page-content">
+                                <div class="container">
+                                   <!-- BEGIN PAGE CONTENT INNER -->
+                                    <div class="page-content-inner">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <!-- BEGIN PROFILE SIDEBAR -->
+                                                <div class="profile-sidebar">
+                                                    <!-- PORTLET MAIN -->
+                                                    <div class="portlet light profile-sidebar-portlet ">
+                                                        <!-- SIDEBAR USERPIC -->
+                                                        <div class="profile-userpic">
+                                                            <img ng-src="images/{{data.imageUrl}}" class="img-responsive" alt=""> 
+                                                        </div>
+                                                        <!-- END SIDEBAR USERPIC -->
+                                                        <!-- SIDEBAR USER TITLE -->
+                                                        <div class="profile-usertitle">
+                                                            <div class="profile-usertitle-name" ng-cloak> {{data.userFirstName}}&nbsp{{data.userLastName}} </div>
+                                                            <div class="profile-usertitle-job"> Developer </div>
+                                                        </div>
+                                                        <!-- END SIDEBAR USER TITLE -->
+                                                        <!-- SIDEBAR BUTTONS -->
+                                                        <div class="profile-userbuttons">
+                                                            <button type="button" class="btn btn-circle green btn-sm">Default Origin</button>
+                                                            <button type="button" class="btn btn-circle red btn-sm">Default Destination</button>
+                                                        </div>
+                                                        <!-- END SIDEBAR BUTTONS -->
+                                                        
+                                                    </div>
+                                                    <!-- END PORTLET MAIN -->
+                                                    <!-- PORTLET MAIN -->
+                                             
+                                                    <!-- END PORTLET MAIN -->
+                                                </div>
+                                                <!-- END BEGIN PROFILE SIDEBAR -->
+                                                <!-- BEGIN PROFILE CONTENT -->
+                                                <div class="profile-content">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="portlet light ">
+                                                                <div class="portlet-title tabbable-line">
+                                                                    <div class="caption caption-md">
+                                                                        <i class="icon-globe theme-font hide"></i>
+                                                                        <span class="caption-subject font-blue-madison bold uppercase">Profile Account</span>
+                                                                    </div>
+                                                                    <ul class="nav nav-tabs">
+                                                                        <li class="active">
+                                                                            <a href="#tab_1_1" data-toggle="tab">Personal Info</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#tab_1_2" data-toggle="tab">Change Avatar</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#tab_1_3" data-toggle="tab">Change Password</a>
+                                                                        </li>
+                                                                       <!-- <li>
+                                                                            <a href="#tab_1_4" data-toggle="tab">Privacy Settings</a>
+                                                                        </li>-->
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="portlet-body">
+                                                                    <div class="tab-content">
+                                                                        <!-- PERSONAL INFO TAB -->
+                                                                        <div class="tab-pane active" id="tab_1_1">
+                                                                            <div role="form" action="#">
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label">First Name</label>
+                                                                                    <input type="text" id="first_name" class="form-control" ng-model="data.userFirstName"> </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label">Last Name</label>
+                                                                                    <input type="text" id="last_name" class="form-control" ng-model="data.userLastName"> </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label">Mobile Number</label>
+                                                                                    <input type="text" id="phone" maxlength="12" class="form-control" ng-model="data.phone"> </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label">Company Name</label>
+                                                                                    <input type="text" id="company_name" class="form-control" ng-model="data.companyName"> </div>                                                                  
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label">Email</label>
+                                                                                    <input type="text" id="email" class="form-control" ng-model="data.email"> </div>
+                                                                                <div class="margiv-top-10">
+                                                                                    <a class="btn green" ng-click="updtprofil()"> Save Changes </a>
+                                                                                    <a class="btn default"> Cancel </a>
+                                                                                </div>
+                                                                            </div>
+    <div id="errEditProfile{{$index}}" class="alert erar" ng-repeat="error in ErrArray track by $index">
+        <button type="button" class="close" data-dismiss="alert">×</button>&nbspERROR :   Please provide {{error.err}}
+    </div>
+     <div id="savedInfo" class="salert alert-success sticky">
+       <button type="button" class="sclose"  onClick="document.getElementById('savedInfo').style.display='none'">×</button>&nbsp <strong>Success!</strong>&nbsp Information saved successfully.
+    </div>
+                                                                        </div>
+                                                                        <!-- END PERSONAL INFO TAB -->
+                                                                        <!-- CHANGE AVATAR TAB -->
+                                                                        <div class="tab-pane" id="tab_1_2">
+                                                                            <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                                                                nesciunt laborum eiusmod. </p>
+                                                                            <div role="form">
+                                                                                <div class="form-group">
+                                                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                                        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                                                            <img id="preimg"  src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <span class="btn default btn-file">
+                                                                                                <form id="uploadForm"  onsubmit="return(valImg())" enctype="multipart/form-data" action="/upload" method="post">
+                                                                                                <div class="containerq">Select an image
+                                                                                                <input type="file" id="uploadFile" name="uploadFile" onchange="loadFile(event)"> </div>
+                                                                                            <input type="submit" class="btn default fileinput-exists" value="submit"/>
+                                                                                        </form>
+                                                                                    </span>
+                                                                                        </div>
+                                                                                    
+                                                                                    <div class="clearfix margin-top-10">
+                                                                                        <span class="label label-danger">NOTE! </span>
+                                                                                        <span>Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                               <!--  <div class="margin-top-10">
+                                                                                    <a href="javascript:;" class="btn green"> Submit </a>
+                                                                                    <a href="javascript:;" class="btn default"> Cancel </a>
+                                                                                </div> -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- END CHANGE AVATAR TAB -->
+                                                                        <!-- CHANGE PASSWORD TAB -->
+                                                                        <div class="tab-pane" id="tab_1_3">
+                                                                            <div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label">Current Password</label>
+                                                                                    <input type="password" class="form-control" id="cpassword" ng-model="pswd.cpswd"  ng-focus="chngbrdr('cpassword')"> </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label">New Password</label>
+                                                                                    <input type="password" class="form-control" id="npassword" ng-model="pswd.npswd" ng-focus="chngbrdr('npassword')"> </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label">Re-type New Password</label>
+                                                                                    <input type="password" class="form-control" id="cnpassword" ng-model="pswd.cnpswd" ng-focus="chngbrdr('cnpassword')"> </div>
+                                                                                <div class="margin-top-10">
+                                                                                    <a class="btn green" ng-click="updtpswd()"> Change Password </a>
+                                                                                    <a class="btn default"> Cancel </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div id="passwordError" class="alert alert-success sticky">
+       <button type="button" class="close" onClick="document.getElementById('passwordError').style.display='none'">×</button>&nbsp <strong>Error&nbsp!</strong>&nbsp {{curentpswderr}}
+        </div>
+    <div id="savedpaswd" class="salert">
+       <button type="button" class="sclose" onClick="document.getElementById('savedpaswd').style.display='none'">×</button>&nbsp <strong>Success!</strong>&nbsp Information saved successfully.
+    </div>
+                                                                        </div>
+                                                                        <!-- END CHANGE PASSWORD TAB -->
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- END PROFILE CONTENT -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END PAGE CONTENT INNER -->
+                                </div>
+                            </div>
+                            <!-- END PAGE CONTENT BODY -->
+                            <!-- END CONTENT BODY -->
+                        </div>
+                        <!-- END CONTENT -->
+                    </div>
+                    <!-- END CONTAINER -->
+                </div>
+            </div>
+            <div class="page-wrapper-row">
+                <div class="page-wrapper-bottom">
+                </div>
+            </div>
+        </div>
+        <!--[if lt IE 9]>
+<script src="../assets/global/plugins/respond.min.js"></script>
+<script src="../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+  
+   <!--     <script src="js/bootstrap.min.js" type="text/javascript"></script> 
+        <script src="js/prfilejs/app.min.js" type="text/javascript"></script> 
+        <script src="js/prfilejs/layout.min.js" type="text/javascript"></script> -->
+     
+</body>
+</html>
